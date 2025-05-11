@@ -5,10 +5,20 @@ Inicio
 
 {% block body %} 
 <h1>Pagina de Inicio</h1>
-{% for ciudad in cityList %}
-    <li><a href="/clima">{{ ciudad }}</a></li>
-    <hr>
-    
-{% endfor %}
+
+
+<li><a href='/clima?ciudad=Buenos Aires'> Buenos Aires</a></li>
+<li><a href='/clima?ciudad=Córdoba'> Córdoba</a></li>
+<li><a href='/clima?ciudad=Madrid'> Madrid</a></li>
+<li><a href='/clima?ciudad=Nueva York'> Nueva York</a></li>
+<li><a href='/clima?ciudad=Tokio'> Tokio</a></li>
+<li><a href='/clima?ciudad=París'> París</a></li>
+<li><a href='/clima?ciudad=Londres'> Londres</a></li>
+<li><a href='/clima?ciudad=Sídney'> Sídney</a></li>
+<li><a href='/clima?ciudad=Ciudad de México'> Ciudad de México</a></li>
+<li><a href='/clima?ciudad=El Cairo'> El Cairo</a></li>    
+
+
+
 
 {% endblock %}

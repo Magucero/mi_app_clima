@@ -1,4 +1,4 @@
-#import requests
+import requests
 
 from datetime import date
 
@@ -28,7 +28,13 @@ def index():
 
 @app.route("/clima")
 def clima():
+    ciudad = request.args.get('ciudad','Buenos Aires',str)
+    lat = ciudades[ciudad]['lat']
+    lon = ciudades[ciudad]['lon']
+    response = requests.get(f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true")
+    data = response.json()
     return render_template(
-        "clima.html"
+        "clima.html",
+        city = ciudad,
+        datosApi = data
     )
-

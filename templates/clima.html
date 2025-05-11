@@ -4,5 +4,15 @@ Clima
 {% endblock %}
 
 {% block body %} 
-<h1>Clima</h1>
+<h1>Ciudad: {{ city }}</h1>
+<li>Tiempo: {{ datosApi.current_weather.time}}</li>
+<li>Intervalo: {{ datosApi.current_weather.interval}}</li>
+<li>Temperatura: {{ datosApi.current_weather.temperature}}</li>
+<li>Velocidad del viento: {{ datosApi.current_weather.windspeed}}</li>
+<li>Direccion del viento: {{ datosApi.current_weather.winddirection}}</li>
+<li>Dia: {{ datosApi.current_weather.is_day}}</li>
+<li>Codigo meteorologico: {{ datosApi.current_weather.weathercode}}</li>
+
+
+
 {% endblock %}
