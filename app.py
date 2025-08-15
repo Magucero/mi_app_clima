@@ -3,8 +3,18 @@ import requests
 from datetime import date
 
 from flask import (Flask, render_template,request)
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = ('mysql+pymysql://root:@localhost/clima')
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+from models import City
+
 
 ciudades = {
     "Buenos Aires": {"lat": -34.6037, "lon": -58.3816},
